@@ -1,11 +1,9 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../data-source";
-import Contact from "../../entities/contact.entities";
 import {
-  TContact,
   TContactNoRelation,
 } from "../../interfaces/contacts.interface";
-import { contactNoRelationSchema, contactSchema } from "../../schemas/contacts.schemas";
+import { contactNoRelationSchema } from "../../schemas/contacts.schemas";
 import Client from "../../entities/client.entity";
 import { AppError } from "../../errors/errors";
 

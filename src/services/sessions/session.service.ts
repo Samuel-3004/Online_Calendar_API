@@ -44,7 +44,6 @@ const createSessionService = async (sessionData: TSession): Promise<any> => {
     token: token,
     user: client,
   };
-  // console.log(dataComplete)
 
   return dataComplete;
 };

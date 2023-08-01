@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { contactSchema } from "./contacts.schemas";
+import { contactSchema, listContactsSchema } from "./contacts.schemas";
 
 const clientSchema = z.object({
   id: z.number(),
@@ -21,6 +21,11 @@ const clientResponseSchema = clientSchema.omit({
 
 const listClientsSchema = z.array(clientResponseSchema);
 
+const sessionAccessSchema = clientSchema.extend({
+  token: z.string(),
+  contacts: listContactsSchema,
+})
+
 const clientUpdateSchema = clientSchema
   .omit({
     id: true,
@@ -38,4 +43,5 @@ export {
   clientContactsSchema,
   listClientsSchema,
   clientResponseSchema,
+  sessionAccessSchema
 };

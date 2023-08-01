@@ -1,9 +1,7 @@
 import { Repository } from "typeorm";
-import { TSession } from "../../interfaces/session.interface";
 import Client from "../../entities/client.entity";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors/errors";
-import { compare } from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 const autoSessionService = async (idToken: number): Promise<any> => {
@@ -38,7 +36,6 @@ const autoSessionService = async (idToken: number): Promise<any> => {
     token: token,
     user: client,
   };
-  console.log(dataComplete)
 
   return dataComplete;
 };
